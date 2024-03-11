@@ -1,15 +1,24 @@
-// recipe.dart
+import 'package:flutter/foundation.dart';
 import 'Ingredient.dart';
+
 class Recipe {
-  final int id; // Add id property
+  final int id;
   final String name;
-  final List<Ingredient> ingredients;
-  final String instructions;
+  List<Ingredient> ingredients;
+  String instructions;
 
   Recipe({
-    required this.id, // Update constructor to accept id
+    required this.id,
     required this.name,
     required this.ingredients,
     required this.instructions,
   });
+
+  void updateInstructions(String newInstructions) {
+    instructions = newInstructions;
+  }
+
+  void updateIngredients(List<Ingredient> newIngredients) {
+    ingredients = newIngredients;
+  }
 }
