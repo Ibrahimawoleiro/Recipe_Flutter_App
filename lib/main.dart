@@ -1,10 +1,10 @@
-// main.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_app/ViewModel/RecipeViewModel.dart';
 import 'package:recipe_app/ViewModel/settings_viewmodel.dart';
 import 'package:recipe_app/Views/home_view.dart';
 import 'package:recipe_app/Views/settings_view.dart';
+
 void main() {
   runApp(
     MultiProvider(
@@ -53,8 +53,13 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white, // Set the background color of the Scaffold
       appBar: AppBar(
-        title: Text('Recipe App'),
+        title: Text(
+          'Recipe App',
+          textAlign: TextAlign.center,
+        ),
+        centerTitle: true, // Center the title horizontally
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(

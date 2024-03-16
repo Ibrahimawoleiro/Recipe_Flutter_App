@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/Model/Recipe.dart';
 import 'package:provider/provider.dart';
+import 'package:recipe_app/Model/Recipe.dart';
 import 'package:recipe_app/ViewModel/RecipeViewModel.dart';
+import 'package:recipe_app/ViewModel/settings_viewmodel.dart';
 import '../Model/Ingredient.dart';
+
 class RecipeDetailView extends StatefulWidget {
   final Recipe recipe;
 
@@ -26,6 +28,7 @@ class _RecipeDetailViewState extends State<RecipeDetailView> {
   @override
   Widget build(BuildContext context) {
     final recipeViewModel = Provider.of<RecipeViewModel>(context);
+    final settingsViewModel = Provider.of<SettingsViewModel>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -47,6 +50,7 @@ class _RecipeDetailViewState extends State<RecipeDetailView> {
           ),
         ],
       ),
+      backgroundColor: settingsViewModel.backgroundColor, // Set the background color from SettingsViewModel
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(

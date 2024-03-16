@@ -70,4 +70,13 @@ class RecipeViewModel extends ChangeNotifier {
       }
     }
   }
+
+  void toggleFavorite(Recipe recipe) {
+  recipe.isFavorite = !recipe.isFavorite;
+  notifyListeners();
 }
+
+
+}
+
+

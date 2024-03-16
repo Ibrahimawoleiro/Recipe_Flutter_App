@@ -1,4 +1,3 @@
-// settings_view.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +12,7 @@ class SettingsView extends StatelessWidget {
       appBar: AppBar(
         title: Text('Settings'),
       ),
+      backgroundColor: settingsViewModel.backgroundColor, // Set the background color from SettingsViewModel
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,28 +44,26 @@ class SettingsView extends StatelessWidget {
             Text('Background Color'),
             SizedBox(height: 8),
             ElevatedButton(
-  onPressed: () {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Pick a color'),
-          content: SingleChildScrollView(
-            child: BlockPicker(
-              pickerColor: settingsViewModel.foregroundColor,
-              onColorChanged: (Color color) {
-                settingsViewModel.changeForegroundColor(color);
-                Navigator.pop(context); // Close the dialog
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text('Pick a color'),
+                      content: SingleChildScrollView(
+                        child: BlockPicker(
+                          pickerColor: settingsViewModel.backgroundColor,
+                          onColorChanged: (Color color) {
+                            settingsViewModel.changeBackgroundColor(color);
+                          },
+                        ),
+                      ),
+                    );
+                  },
+                );
               },
+              child: Text('Choose Color'),
             ),
-          ),
-        );
-      },
-    );
-  },
-  child: Text('Choose Color'),
-),
-
           ],
         ),
       ),
