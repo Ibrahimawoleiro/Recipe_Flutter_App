@@ -58,29 +58,33 @@ class _RecipeDetailViewState extends State<RecipeDetailView> {
           children: [
             Text(
               'Ingredients:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: settingsViewModel.foregroundColor), // Set text color
             ),
             SizedBox(height: 8),
             TextField(
               controller: _ingredientsController,
               maxLines: null,
               keyboardType: TextInputType.multiline,
+              style: TextStyle(color: settingsViewModel.foregroundColor), // Set text color
               decoration: InputDecoration(
                 hintText: 'Enter ingredients...',
+                hintStyle: TextStyle(color: settingsViewModel.foregroundColor), // Set hint text color
               ),
             ),
             SizedBox(height: 16),
             Text(
               'Instructions:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: settingsViewModel.foregroundColor), // Set text color
             ),
             SizedBox(height: 8),
             TextField(
               controller: _instructionsController,
               maxLines: null,
               keyboardType: TextInputType.multiline,
+              style: TextStyle(color: settingsViewModel.foregroundColor), // Set text color
               decoration: InputDecoration(
                 hintText: 'Enter instructions...',
+                hintStyle: TextStyle(color: settingsViewModel.foregroundColor), // Set hint text color
               ),
             ),
           ],

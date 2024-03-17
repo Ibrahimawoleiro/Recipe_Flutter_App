@@ -26,7 +26,7 @@ class FavoriteTabView extends StatelessWidget {
             style: TextStyle(color: settingsViewModel.foregroundColor),
           ),
           trailing: IconButton(
-            icon: recipe.isFavorite ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+            icon: recipe.isFavorite ? Icon(Icons.favorite, color: settingsViewModel.foregroundColor) : Icon(Icons.favorite_border, color: settingsViewModel.foregroundColor),
             onPressed: () {
               recipeViewModel.toggleFavorite(recipe);
             },

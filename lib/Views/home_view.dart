@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:recipe_app/ViewModel/RecipeViewModel.dart';
-import 'package:recipe_app/Views/recipe_list_view.dart'; // Import RecipeListView
-import 'package:recipe_app/Views/favorite_tab_view.dart'; // Import FavoriteTabView
+import 'package:recipe_app/Views/recipe_list_view.dart';
+import 'package:recipe_app/Views/favorite_tab_view.dart';
 import 'package:recipe_app/ViewModel/settings_viewmodel.dart';
 
 class HomeView extends StatefulWidget {
@@ -35,6 +35,7 @@ class _HomeViewState extends State<HomeView> {
           child: Column(
             children: [
               TabBar(
+                labelColor: settingsViewModel.foregroundColor, // Set tab label color
                 tabs: [
                   Tab(icon: Icon(Icons.list), text: 'All Recipes'),
                   Tab(icon: Icon(Icons.favorite), text: 'Favorites'),
@@ -55,3 +56,4 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
+

@@ -3,6 +3,7 @@ import 'package:recipe_app/Model/Recipe.dart';
 import '../Model/Ingredient.dart';
 import 'package:recipe_app/ViewModel/RecipeViewModel.dart';
 import 'package:provider/provider.dart';
+import '../ViewModel/settings_viewmodel.dart'; 
 
 class EditRecipeView extends StatefulWidget {
   final Recipe recipe;
@@ -25,9 +26,13 @@ class _EditRecipeViewState extends State<EditRecipeView> {
 
   @override
   Widget build(BuildContext context) {
+    // Access the settings view model
+    final settingsViewModel = Provider.of<SettingsViewModel>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit Recipe'),
+        backgroundColor: settingsViewModel.backgroundColor, // Use background color from settings view model
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -36,7 +41,7 @@ class _EditRecipeViewState extends State<EditRecipeView> {
           children: [
             Text(
               'Ingredients:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: settingsViewModel.textColor), // Use text color from settings view model
             ),
             SizedBox(height: 8),
             TextField(
@@ -70,6 +75,9 @@ class _EditRecipeViewState extends State<EditRecipeView> {
                 Navigator.pop(context); // Go back to the previous screen
               },
               child: Text('Save'),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(settingsViewModel.buttonColor), // Use button color from settings view model
+              ),
             ),
           ],
         ),

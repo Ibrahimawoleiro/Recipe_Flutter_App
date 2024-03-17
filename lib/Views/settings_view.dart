@@ -39,6 +39,9 @@ class SettingsView extends StatelessWidget {
                 );
               },
               child: Text('Choose Color'),
+              style: ElevatedButton.styleFrom(
+                primary: settingsViewModel.backgroundColor, // Set the button color
+              ),
             ),
             SizedBox(height: 16),
             Text('Background Color'),
@@ -63,6 +66,9 @@ class SettingsView extends StatelessWidget {
                 );
               },
               child: Text('Choose Color'),
+              style: ElevatedButton.styleFrom(
+                primary: settingsViewModel.backgroundColor, // Set the button color
+              ),
             ),
           ],
         ),
