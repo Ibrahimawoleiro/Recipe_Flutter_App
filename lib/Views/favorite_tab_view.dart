@@ -18,7 +18,7 @@ class FavoriteTabView extends StatelessWidget {
         Recipe recipe = favoriteRecipes[index];
         return ListTile(
           leading: CircleAvatar(
-            backgroundImage: NetworkImage(recipe.imageUrl),
+            backgroundImage: AssetImage(recipe.imageUrl),
             radius: 25, // Adjust the size as needed
           ),
           title: Text(
