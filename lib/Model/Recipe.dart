@@ -2,11 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'Ingredient.dart';
 
 class Recipe {
-  final int id;
-  final String name;
-  List<Ingredient> ingredients; // Remove final keyword
+  int id;
+  String name;
+  List<Ingredient> ingredients;
   String instructions;
   bool isFavorite;
+  String imageUrl;
 
   Recipe({
     required this.id,
@@ -14,14 +15,16 @@ class Recipe {
     required this.ingredients,
     required this.instructions,
     this.isFavorite = false,
+    required this.imageUrl,
   });
 
-  void updateInstructions(String newInstructions) {
-    instructions = newInstructions;
+  // Setter method for ingredients
+  set setIngredients(List<Ingredient> newIngredients) {
+    ingredients = newIngredients;
   }
 
-  void updateIngredients(List<Ingredient> newIngredients) {
-    ingredients.clear(); // Clear the current list of ingredients
-    ingredients.addAll(newIngredients); // Add all new ingredients to the list
+  // Setter method for instructions
+  set setInstructions(String newInstructions) {
+    instructions = newInstructions;
   }
 }

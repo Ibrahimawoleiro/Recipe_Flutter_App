@@ -1,5 +1,7 @@
+// lib/ViewModel/RecipeViewModel.dart
+
 import 'package:flutter/foundation.dart';
-import 'package:recipe_app/Model/Recipe.dart';
+import '../Model/Recipe.dart';
 import '../Model/Ingredient.dart';
 
 class RecipeViewModel extends ChangeNotifier {
@@ -32,18 +34,21 @@ class RecipeViewModel extends ChangeNotifier {
       Recipe(
         id: 1,
         name: 'Recipe 1',
+        imageUrl: 'image1.jpg',
         ingredients: [Ingredient(name: 'Ingredient 1', quantity: 'Quantity 1')],
         instructions: 'Instructions for Recipe 1',
       ),
       Recipe(
         id: 2,
         name: 'Recipe 2',
+        imageUrl: 'image2.jpg',
         ingredients: [Ingredient(name: 'Ingredient 2', quantity: 'Quantity 2')],
         instructions: 'Instructions for Recipe 2',
       ),
       Recipe(
         id: 3,
         name: 'Recipe 3',
+        imageUrl: 'image3.jpg',
         ingredients: [Ingredient(name: 'Ingredient 3', quantity: 'Quantity 3')],
         instructions: 'Instructions for Recipe 3',
       ),
@@ -51,10 +56,15 @@ class RecipeViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void toggleFavorite(Recipe recipe) {
+    recipe.isFavorite = !recipe.isFavorite;
+    notifyListeners();
+  }
+
   void updateIngredients(Recipe recipe, List<Ingredient> newIngredients) {
     for (int i = 0; i < _recipes.length; i++) {
       if (_recipes[i].id == recipe.id) {
-        _recipes[i].updateIngredients(newIngredients);
+        _recipes[i].ingredients = newIngredients;
         notifyListeners();
         break;
       }
@@ -64,19 +74,10 @@ class RecipeViewModel extends ChangeNotifier {
   void updateInstructions(Recipe recipe, String newInstructions) {
     for (int i = 0; i < _recipes.length; i++) {
       if (_recipes[i].id == recipe.id) {
-        _recipes[i].updateInstructions(newInstructions);
+        _recipes[i].instructions = newInstructions;
         notifyListeners();
         break;
       }
     }
   }
-
-  void toggleFavorite(Recipe recipe) {
-  recipe.isFavorite = !recipe.isFavorite;
-  notifyListeners();
 }
-
-
-}
-
-
