@@ -126,6 +126,68 @@ DIRECTIONS
 8. Tuck into a warm crusty bun and add your favourite toppings.
 '''
 ),
+Recipe(
+        id:4,
+        name: 'Pasta Salad',
+        imageUrl: 'assets/images/pasta_salad.jpg',
+        ingredients: [
+          Ingredient(
+            name: 'Pasta',
+            quantity: '1 lb.'
+          ),
+          Ingredient(
+            name: 'Italian Salad Dressing',
+            quantity: 'to taste'
+          ),
+          Ingredient(
+            name: 'Salad Seasoning Mix',
+            quantity: 'to taste'
+          ),
+          Ingredient(
+            name: 'Cherry tomatoes',
+            quantity: 'as desired'
+          ),
+          Ingredient(
+            name: 'Green Bell Pepper',
+            quantity: '1'
+          ),
+          Ingredient(
+            name: 'Yellow Bell Pepper',
+            quantity: '1'
+          ),
+          Ingredient(
+            name: 'Red Bell Pepper',
+            quantity: '1'
+          ),
+          Ingredient(
+            name: 'Black Olives',
+            quantity: '1 can'
+          ),
+          Ingredient(
+            name: 'Water',
+            quantity: '6 quarts'
+          ),
+          Ingredient(
+            name: 'Salt',
+            quantity: 'to taste'
+          )
+        ],
+        instructions: 
+          'Directions:\n\n'
+          'Fill a large pot with water.\n\n'
+          'Bring the pot to a boil.\n\n'
+          'Add salt.\n\n'
+          'Add dried pasta.\n\n'
+          'Stir until water returns to a boil.\n\n'
+          'Strain and cool pasta briefly.\n\n'
+          'Toss pasta in olive oil.\n\n'
+          'Cool pasta to room temp and refrigerate covered.\n\n'
+          'Chop bell peppers.\n\n'
+          'Pour italian dressing into a small bowl.\n\n'
+          'Add salad seasoning to dressing to taste.'
+          'Add bell peppers and olives to seasoned dressing and mix together.'
+          'Add seasoned dressing to pasta and mix together.'
+      ),
   ];
   notifyListeners();
 }

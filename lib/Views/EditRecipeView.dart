@@ -41,7 +41,7 @@ class _EditRecipeViewState extends State<EditRecipeView> {
           children: [
             Text(
               'Ingredients:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: settingsViewModel.textColor), // Use text color from settings view model
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: settingsViewModel.foregroundColor), // Use text color from settings view model
             ),
             SizedBox(height: 8),
             TextField(
@@ -67,6 +67,7 @@ class _EditRecipeViewState extends State<EditRecipeView> {
                 Recipe updatedRecipe = Recipe(
                   id: widget.recipe.id,
                   name: widget.recipe.name,
+                  imageUrl: widget.recipe.imageUrl,
                   ingredients: updatedIngredients,
                   instructions: widget.recipe.instructions,
                 );
@@ -76,7 +77,7 @@ class _EditRecipeViewState extends State<EditRecipeView> {
               },
               child: Text('Save'),
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(settingsViewModel.buttonColor), // Use button color from settings view model
+                backgroundColor: MaterialStateProperty.all<Color>(settingsViewModel.backgroundColor), // Use button color from settings view model
               ),
             ),
           ],
