@@ -34,6 +34,7 @@ class RecipeListView extends StatelessWidget {
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
+                Text('Rating: ${recipe.rating}'),
                 IconButton(
                   icon: recipe.isFavorite ? Icon(Icons.favorite, color: settingsViewModel.foregroundColor) : Icon(Icons.favorite_border, color: settingsViewModel.foregroundColor), // Set icon color
                   onPressed: () {

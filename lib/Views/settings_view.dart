@@ -67,7 +67,7 @@ class SettingsView extends StatelessWidget {
               },
               child: Text('Choose Color'),
               style: ElevatedButton.styleFrom(
-                primary: settingsViewModel.backgroundColor, // Set the button color
+                backgroundColor: settingsViewModel.backgroundColor, // Set the button color
               ),
             ),
           ],
